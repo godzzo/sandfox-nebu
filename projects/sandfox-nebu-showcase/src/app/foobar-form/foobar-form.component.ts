@@ -12,6 +12,8 @@ export class FoobarFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
       title: 'Hello World',
+      type: null,
+      isActive: true,
     });
   }
 

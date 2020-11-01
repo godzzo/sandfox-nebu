@@ -2,6 +2,8 @@
   <nb-card-header>Nebula</nb-card-header>
   <nb-card-body>
     <sffc-form-textbox caption="Cím" name="title" [formGroup]="formGroup"></sffc-form-textbox>
+    <sffc-form-select caption="Típus" name="type" [formGroup]="formGroup"></sffc-form-select>
+    <sffc-form-checkbox label="Aktív?" name="isActive" [formGroup]="formGroup"></sffc-form-checkbox>
   </nb-card-body>
   <nb-card-footer>
     {{ formGroup.getRawValue() | json }}

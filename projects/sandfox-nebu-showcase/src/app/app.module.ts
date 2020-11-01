@@ -18,7 +18,7 @@ import { FoobarFormComponent } from './foobar-form/foobar-form.component';
     BrowserModule,
     AppRoutingModule,
 
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbSidebarModule.forRoot(),
     NbButtonModule,
