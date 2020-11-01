@@ -1,0 +1,27 @@
+{
+  "name": "sandfox-nebu-form-controls",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.2.0",
+    "@angular/core": "^10.2.0",
+    "@angular/animations": "^10.2.1",
+    "@angular/cdk": "^10.2.6",
+    "@nebular/eva-icons": "^6.2.1",
+    "@nebular/theme": "^6.2.1",
+    "eva-icons": "^1.1.3"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "description": "Only testing how to publish Nebular own library to NpmJS",
+  "author": {
+    "name": "EGodzzo",
+    "email": "egodzzo@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "nebular",
+    "test",
+    "demo"
+  ]
+}

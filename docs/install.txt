@@ -1,0 +1,55 @@
+godzzo@DESKTOP-I2SOAMA ~/Projects
+$ ng new sandfox-nebu --createApplication=false --style=scss
+  CREATE sandfox-nebu/angular.json (136 bytes)
+  CREATE sandfox-nebu/package.json (1184 bytes)
+  CREATE sandfox-nebu/README.md (1020 bytes)
+  CREATE sandfox-nebu/tsconfig.json (458 bytes)
+  CREATE sandfox-nebu/tslint.json (2992 bytes)
+  CREATE sandfox-nebu/.editorconfig (274 bytes)
+  CREATE sandfox-nebu/.gitignore (631 bytes)
+  √ Packages installed successfully.
+  warning: LF will be replaced by CRLF in .editorconfig.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in .gitignore.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in README.md.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in angular.json.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in package-lock.json.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in package.json.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in tsconfig.json.
+  The file will have its original line endings in your working directory
+  warning: LF will be replaced by CRLF in tslint.json.
+  The file will have its original line endings in your working directory
+      Successfully initialized git.
+
+godzzo@DESKTOP-I2SOAMA ~/Projects
+$ cd sandfox-nebu/
+
+godzzo@DESKTOP-I2SOAMA ~/Projects/sandfox-nebu
+$ ng generate library sandfox-nebu-form-controls --prefix sffc
+  CREATE projects/sandfox-nebu-form-controls/karma.conf.js (1042 bytes)
+  CREATE projects/sandfox-nebu-form-controls/ng-package.json (175 bytes)
+  CREATE projects/sandfox-nebu-form-controls/package.json (205 bytes)
+  CREATE projects/sandfox-nebu-form-controls/README.md (1136 bytes)
+  CREATE projects/sandfox-nebu-form-controls/tsconfig.lib.json (540 bytes)
+  CREATE projects/sandfox-nebu-form-controls/tsconfig.lib.prod.json (230 bytes)
+  CREATE projects/sandfox-nebu-form-controls/tsconfig.spec.json (309 bytes)
+  CREATE projects/sandfox-nebu-form-controls/tslint.json (249 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/test.ts (781 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/public-api.ts (235 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/lib/sandfox-nebu-form-controls.module.ts (314 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/lib/sandfox-nebu-form-controls.component.spec.ts (748 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/lib/sandfox-nebu-form-controls.component.ts (323 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/lib/sandfox-nebu-form-controls.service.spec.ts (445 bytes)
+  CREATE projects/sandfox-nebu-form-controls/src/lib/sandfox-nebu-form-controls.service.ts (152 bytes)
+  UPDATE angular.json (1626 bytes)
+  UPDATE package.json (1263 bytes)
+  UPDATE tsconfig.json (560 bytes)
+  √ Packages installed successfully.
+
+
+$ ng build sandfox-nebu-form-controls --prod

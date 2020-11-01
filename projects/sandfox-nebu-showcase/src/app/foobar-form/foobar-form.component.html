@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>Nebula</nb-card-header>
+  <nb-card-body>
+    <sffc-form-textbox
+      caption="Cím"
+      name="title"
+      [formGroup]="formGroup"
+    ></sffc-form-textbox>
+
+  </nb-card-body>
+  <nb-card-footer>
+    {{ formGroup.getRawValue() | json }}
+  </nb-card-footer>
+</nb-card>

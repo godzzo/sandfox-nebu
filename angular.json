@@ -2,5 +2,294 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "sandfox-nebu-form-controls": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/sandfox-nebu-form-controls",
+      "sourceRoot": "projects/sandfox-nebu-form-controls/src",
+      "prefix": "sffc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sandfox-nebu-form-controls/tsconfig.lib.json",
+            "project": "projects/sandfox-nebu-form-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sandfox-nebu-form-controls/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sandfox-nebu-form-controls/src/test.ts",
+            "tsConfig": "projects/sandfox-nebu-form-controls/tsconfig.spec.json",
+            "karmaConfig": "projects/sandfox-nebu-form-controls/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sandfox-nebu-form-controls/tsconfig.lib.json",
+              "projects/sandfox-nebu-form-controls/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "sandfox-nebu-dev-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/sandfox-nebu-dev-app",
+      "sourceRoot": "projects/sandfox-nebu-dev-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sandfox-nebu-dev-app",
+            "index": "projects/sandfox-nebu-dev-app/src/index.html",
+            "main": "projects/sandfox-nebu-dev-app/src/main.ts",
+            "polyfills": "projects/sandfox-nebu-dev-app/src/polyfills.ts",
+            "tsConfig": "projects/sandfox-nebu-dev-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/sandfox-nebu-dev-app/src/favicon.ico",
+              "projects/sandfox-nebu-dev-app/src/assets"
+            ],
+            "styles": [
+              "projects/sandfox-nebu-dev-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandfox-nebu-dev-app/src/environments/environment.ts",
+                  "with": "projects/sandfox-nebu-dev-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sandfox-nebu-dev-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sandfox-nebu-dev-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sandfox-nebu-dev-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sandfox-nebu-dev-app/src/test.ts",
+            "polyfills": "projects/sandfox-nebu-dev-app/src/polyfills.ts",
+            "tsConfig": "projects/sandfox-nebu-dev-app/tsconfig.spec.json",
+            "karmaConfig": "projects/sandfox-nebu-dev-app/karma.conf.js",
+            "assets": [
+              "projects/sandfox-nebu-dev-app/src/favicon.ico",
+              "projects/sandfox-nebu-dev-app/src/assets"
+            ],
+            "styles": [
+              "projects/sandfox-nebu-dev-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sandfox-nebu-dev-app/tsconfig.app.json",
+              "projects/sandfox-nebu-dev-app/tsconfig.spec.json",
+              "projects/sandfox-nebu-dev-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/sandfox-nebu-dev-app/e2e/protractor.conf.js",
+            "devServerTarget": "sandfox-nebu-dev-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sandfox-nebu-dev-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "sandfox-nebu-showcase": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/sandfox-nebu-showcase",
+      "sourceRoot": "projects/sandfox-nebu-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sandfox-nebu-showcase",
+            "index": "projects/sandfox-nebu-showcase/src/index.html",
+            "main": "projects/sandfox-nebu-showcase/src/main.ts",
+            "polyfills": "projects/sandfox-nebu-showcase/src/polyfills.ts",
+            "tsConfig": "projects/sandfox-nebu-showcase/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/sandfox-nebu-showcase/src/favicon.ico",
+              "projects/sandfox-nebu-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/sandfox-nebu-showcase/src/styles.scss",
+              "node_modules/@nebular/theme/styles/prebuilt/default.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandfox-nebu-showcase/src/environments/environment.ts",
+                  "with": "projects/sandfox-nebu-showcase/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sandfox-nebu-showcase:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sandfox-nebu-showcase:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sandfox-nebu-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sandfox-nebu-showcase/src/test.ts",
+            "polyfills": "projects/sandfox-nebu-showcase/src/polyfills.ts",
+            "tsConfig": "projects/sandfox-nebu-showcase/tsconfig.spec.json",
+            "karmaConfig": "projects/sandfox-nebu-showcase/karma.conf.js",
+            "assets": [
+              "projects/sandfox-nebu-showcase/src/favicon.ico",
+              "projects/sandfox-nebu-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/sandfox-nebu-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sandfox-nebu-showcase/tsconfig.app.json",
+              "projects/sandfox-nebu-showcase/tsconfig.spec.json",
+              "projects/sandfox-nebu-showcase/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/sandfox-nebu-showcase/e2e/protractor.conf.js",
+            "devServerTarget": "sandfox-nebu-showcase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sandfox-nebu-showcase:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "sandfox-nebu-form-controls"
 }
