@@ -1,5 +1,11 @@
 /* https://specificity.keegan.st/ */
-::ng-deep div.form-group > nb-select.appearance-outline.status-basic > button.select-button[disabled],
-::ng-deep div.form-group > nb-select.appearance-outline.status-danger > button.select-button[disabled] {
+::ng-deep
+  div.form-group
+  > nb-select.appearance-outline.status-basic
+  > button.select-button[disabled],
+::ng-deep
+  div.form-group
+  > nb-select.appearance-outline.status-danger
+  > button.select-button[disabled] {
   color: rgba(103, 115, 139, 0.91);
 }

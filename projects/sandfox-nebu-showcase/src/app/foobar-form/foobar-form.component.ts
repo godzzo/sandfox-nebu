@@ -13,14 +13,14 @@ export class FoobarFormComponent implements OnInit {
   formGroup: FormGroup;
 
   users: any[] = [
-    {name: 'Apple Gate', value: 19},
-    {name: 'Bernadett', value: 33},
-    {name: 'Jasmine', value: 11},
-    {name: 'Joe', value: 79},
-    {name: 'Zoey', value: 199},
+    { name: 'Apple Gate', value: 19 },
+    { name: 'Bernadett', value: 33 },
+    { name: 'Jasmine', value: 11 },
+    { name: 'Joe', value: 79 },
+    { name: 'Zoey', value: 199 },
   ];
 
-  userHandler = new class implements FormAutocompleteHandler {
+  userHandler = new (class implements FormAutocompleteHandler {
     constructor(public parent: FoobarFormComponent) {}
 
     search(comp, search) {
@@ -29,14 +29,12 @@ export class FoobarFormComponent implements OnInit {
 
     select(comp, value) {
       of(this.parent.users[1])
-      .pipe(
-        delay(1000)
-      )
-      .subscribe(val => {
-        comp.optionForValue(val);
-      });
+        .pipe(delay(1000))
+        .subscribe((val) => {
+          comp.optionForValue(val);
+        });
     }
-  }(this);
+  })(this);
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({

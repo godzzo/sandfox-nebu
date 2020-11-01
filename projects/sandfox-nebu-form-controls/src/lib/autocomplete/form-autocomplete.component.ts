@@ -1,5 +1,12 @@
 import { SandfoxNebuFormControlsService } from './../sandfox-nebu-form-controls.service';
-import { Component, Input, ViewChild, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 export interface FormAutocompleteHandler {
@@ -31,10 +38,9 @@ export class FormAutocompleteComponent implements OnInit {
 
   constructor(
     protected formBuilder: FormBuilder,
-    protected formService: SandfoxNebuFormControlsService,
+    protected formService: SandfoxNebuFormControlsService
   ) {
     this.viewHandleBind = this.viewHandle.bind(this);
-
   }
 
   ngOnInit() {
@@ -49,13 +55,13 @@ export class FormAutocompleteComponent implements OnInit {
 
     this.inputStatus = this.getFormControl().status;
 
-    this.getFormControl().valueChanges.subscribe(value => {
+    this.getFormControl().valueChanges.subscribe((value) => {
       console.log('valueChanges', value);
 
       this.callSelect(value);
     });
 
-    this.getFormControl().statusChanges.subscribe(status => {
+    this.getFormControl().statusChanges.subscribe((status) => {
       console.log('statusChanges', status);
       this.inputStatus = status;
     });
@@ -76,7 +82,10 @@ export class FormAutocompleteComponent implements OnInit {
   // Request of the record of the value (code/id)
   callSelect(value) {
     if (value) {
-      if (!this.selectedOption || (this.selectedOption && this.selectedOption.value !== value)) {
+      if (
+        !this.selectedOption ||
+        (this.selectedOption && this.selectedOption.value !== value)
+      ) {
         this.handler.select(this, value);
       }
     }
@@ -84,7 +93,7 @@ export class FormAutocompleteComponent implements OnInit {
 
   // Subscribe to the Autocomplate onSelect event - to set the FormControl value
   onSelectionChange(selection) {
-    const found = this.options.find(el => el.value === selection); // selection.value
+    const found = this.options.find((el) => el.value === selection); // selection.value
 
     // Very important to set selectedOption FIRST and after that set the FormControl value!
     this.selectedOption = found;
@@ -98,15 +107,13 @@ export class FormAutocompleteComponent implements OnInit {
 
   // Set the name of the selected option to the searchInput
   viewHandle(value) {
-    const found = this.options.find(el => el.value === value);
+    const found = this.options.find((el) => el.value === value);
 
     if (!found) {
       console.log('Not found!', found);
 
       return value;
-
     } else {
-
       return found.name;
     }
   }
