@@ -53,3 +53,16 @@ $ ng generate library sandfox-nebu-form-controls --prefix sffc
 
 
 $ ng build sandfox-nebu-form-controls --prod
+
+$ npm link dist/sandfox-nebu-form-controls
+
+$ npm link sandfox-nebu-form-controls
+
+$ ng serve sandfox-nebu-showcase
+
+$ cd dist/sandfox-nebu-form-controls/
+$ npm adduser
+
+$ ng build sandfox-nebu-form-controls --prod --watch
+
+OPEN https://stackblitz.com/edit/nebular-sandfox-tester

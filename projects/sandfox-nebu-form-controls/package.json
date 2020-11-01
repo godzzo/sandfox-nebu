@@ -13,15 +13,13 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "description": "Only testing how to publish Nebular own library to NpmJS",
+  "description": "Form Controls for Nebular Apps with ReactiveForm handling.",
   "author": {
     "name": "EGodzzo",
     "email": "egodzzo@gmail.com"
   },
   "keywords": [
     "angular",
-    "nebular",
-    "test",
-    "demo"
+    "nebular"
   ]
 }
