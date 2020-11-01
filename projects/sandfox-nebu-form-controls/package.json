@@ -1,6 +1,6 @@
 {
   "name": "sandfox-nebu-form-controls",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^10.2.0",
     "@angular/core": "^10.2.0",

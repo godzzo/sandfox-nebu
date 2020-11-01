@@ -1,0 +1,25 @@
+<div class="form-group" [formGroup]="formGroup">
+  <label for="autocompleteInput{{ name }}" class="label">{{ caption }}</label>
+
+  <ng-container>
+    <input
+      #autoInput
+      nbInput
+      autocomplete="off"
+      id="autocompleteInput{{ name }}"
+      type="text"
+      fullWidth
+      [attr.disabled]="inputStatus === 'DISABLED' ? 'true' : null"
+      [nbAutocomplete]="auto"
+      [status]="getStatus()"
+      [placeholder]="placeholder"
+      (input)="onChange()"
+    />
+
+    <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)" [handleDisplayFn]="viewHandleBind">
+      <nb-option *ngFor="let option of options" [value]="option.value">
+        {{ option.name }}
+      </nb-option>
+    </nb-autocomplete>
+  </ng-container>
+</div>

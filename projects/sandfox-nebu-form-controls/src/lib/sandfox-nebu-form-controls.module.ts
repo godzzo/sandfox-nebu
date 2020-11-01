@@ -1,3 +1,4 @@
+import { FormAutocompleteComponent } from './autocomplete/form-autocomplete.component';
 import { FormCheckboxComponent } from './checkbox/form-checkbox.component';
 import { FormSelectComponent } from './select/form-select.component';
 import { FormTextboxComponent } from './textbox/form-textbox.component';
@@ -13,12 +14,14 @@ import {
   NbSelectModule,
   NbIconModule,
   NbListModule,
+  NbAutocompleteModule,
 } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
+    FormAutocompleteComponent,
     FormCheckboxComponent,
     FormSelectComponent,
     FormTextboxComponent,
@@ -30,6 +33,7 @@ import { CommonModule } from '@angular/common';
 
     NbThemeModule,
 
+    NbAutocompleteModule,
     NbButtonModule,
     NbCardModule,
     NbCheckboxModule,
@@ -41,6 +45,7 @@ import { CommonModule } from '@angular/common';
     NbSelectModule,
   ],
   exports: [
+    FormAutocompleteComponent,
     FormCheckboxComponent,
     FormSelectComponent,
     FormTextboxComponent,
