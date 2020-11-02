@@ -6,7 +6,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbLayoutModule, NbThemeModule, NbCardModule, NbDatepickerModule } from '@nebular/theme';
+import {
+  NbLayoutModule,
+  NbThemeModule,
+  NbCardModule,
+  NbDatepickerModule,
+} from '@nebular/theme';
 import { NbSidebarModule } from '@nebular/theme';
 import { NbButtonModule } from '@nebular/theme';
 
@@ -20,7 +25,6 @@ import localeHu from '@angular/common/locales/hu';
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeHu, 'hu-HU');
-
 
 @NgModule({
   declarations: [AppComponent, FoobarFormComponent],

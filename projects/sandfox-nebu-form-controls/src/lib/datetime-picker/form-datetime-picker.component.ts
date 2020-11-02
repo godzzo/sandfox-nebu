@@ -42,16 +42,13 @@ export class FormDatetimePickerComponent implements OnInit, AfterViewInit {
 
   @ViewChild('timeInput') input: ElementRef;
 
-  constructor(
-    protected formService: SandfoxNebuFormControlsService,
-  ) {}
+  constructor(protected formService: SandfoxNebuFormControlsService) {}
 
   ngAfterViewInit(): void {
     this.parseInputValue(this.queue);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   initFormControl() {
     this.formControl = this.formGroup.get(this.name) as FormControl;
