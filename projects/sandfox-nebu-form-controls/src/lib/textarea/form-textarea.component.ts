@@ -13,12 +13,9 @@ export class FormTextareaComponent implements OnInit {
   @Input() caption = 'Szöveg bevitel';
   @Input() formGroup: FormGroup;
 
-  constructor(
-    protected formService: SandfoxNebuFormControlsService
-  ) {}
+  constructor(protected formService: SandfoxNebuFormControlsService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getStatus() {
     const control = this.formGroup.controls[this.name];

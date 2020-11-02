@@ -32,6 +32,9 @@
       name="planTime"
       [formGroup]="formGroup"
     ></sffc-form-datetime-picker>
+    <sffc-core-uploader
+      url="http://localhost:8080/app/upload"
+    ></sffc-core-uploader>
   </nb-card-body>
   <nb-card-footer>
     {{ formGroup.getRawValue() | json }}

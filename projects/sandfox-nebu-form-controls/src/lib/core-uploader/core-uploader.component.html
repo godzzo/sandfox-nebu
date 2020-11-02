@@ -1,0 +1,36 @@
+<div class="upload-box-content">
+  <div
+    class="drop-container"
+    ngFileDrop
+    [options]="options"
+    (uploadOutput)="onUploadOutput($event)"
+    [uploadInput]="uploadInput"
+  >
+    <p>
+      Húzd ide a feltöltendő állományt/állományokat, vagy tallózz a gépedről
+      <label class="upload-button">
+        <input
+          type="file"
+          ngFileSelect
+          [options]="options"
+          (uploadOutput)="onUploadOutput($event)"
+          [uploadInput]="uploadInput"
+          multiple
+        />
+      </label>
+    </p>
+  </div>
+
+  <ng-container
+    [ngTemplateOutlet]="extraTemplate"
+    [ngTemplateOutletContext]="{ handler: this }"
+  ></ng-container>
+
+  <div *ngFor="let f of files; let i = index">
+    {{ f.name }}
+
+    <nb-progress-bar status="info" value="f?.progress?.data?.percentage">
+      {{ f?.progress?.data?.percentage }} %
+    </nb-progress-bar>
+  </div>
+</div>
