@@ -13,5 +13,6 @@ export * from './lib/datetime-picker/form-datetime-picker.component';
 export * from './lib/select/form-select.component';
 export * from './lib/textarea/form-textarea.component';
 export * from './lib/textbox/form-textbox.component';
+export * from './lib/tinymce/form-tinymce.component';
 
 export * from './lib/sandfox-nebu-form-controls.module';

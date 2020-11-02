@@ -35,6 +35,11 @@
     <sffc-core-uploader
       url="http://localhost:8080/app/upload"
     ></sffc-core-uploader>
+    <sffc-form-tinymce
+      caption="Tartalom (WysIWyg)"
+      name="content"
+      [formGroup]="formGroup"
+    ></sffc-form-tinymce>
   </nb-card-body>
   <nb-card-footer>
     {{ formGroup.getRawValue() | json }}

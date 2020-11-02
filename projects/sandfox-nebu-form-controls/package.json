@@ -1,6 +1,6 @@
 {
   "name": "sandfox-nebu-form-controls",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^10.2.0",
     "@angular/core": "^10.2.0",
@@ -9,10 +9,12 @@
     "@nebular/date-fns": "^6.2.1",
     "@nebular/eva-icons": "^6.2.1",
     "@nebular/theme": "^6.2.1",
+    "@tinymce/tinymce-angular": "^4.2.0",
     "date-fns": "^2.16.1",
     "eva-icons": "^1.1.3",
     "ngx-mask": "^10.0.4",
-    "ngx-uploader": "^10.0.0"
+    "ngx-uploader": "^10.0.0",
+    "tinymce": "^5.5.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"

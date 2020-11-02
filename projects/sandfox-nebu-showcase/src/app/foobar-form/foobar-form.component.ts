@@ -44,6 +44,7 @@ export class FoobarFormComponent implements OnInit {
       userId: 79,
       created: new Date(), // '2020-11-02'
       planTime: new Date(),
+      content: '<h1>Hello World :)</h1><p>How are You?</p>',
     });
   }
 

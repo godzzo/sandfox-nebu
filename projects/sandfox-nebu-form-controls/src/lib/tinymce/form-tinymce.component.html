@@ -1,0 +1,16 @@
+<div class="form-group" [formGroup]="formGroup">
+  <label for="tinymceEditor{{ name }}" class="label">{{ caption }}</label>
+
+  <div [class.danger-status]="getStatus() === 'danger'" *ngIf="!readOnlyMode">
+    <editor
+      id="tinymceEditor{{ name }}"
+      [formControlName]="name"
+      [init]="config"
+    ></editor>
+  </div>
+  <div
+    id="tinymceEditor{{ name }}"
+    *ngIf="readOnlyMode"
+    innerHTML="{{ formGroup.getRawValue()[name] }}"
+  ></div>
+</div>

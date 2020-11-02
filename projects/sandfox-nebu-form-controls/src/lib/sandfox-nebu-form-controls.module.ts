@@ -1,3 +1,4 @@
+import { FormTinymceComponent } from './tinymce/form-tinymce.component';
 import { CoreUploaderComponent } from './core-uploader/core-uploader.component';
 import { FormTextareaComponent } from './textarea/form-textarea.component';
 import { FormDatetimePickerComponent } from './datetime-picker/form-datetime-picker.component';
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
 import { NgxUploaderModule } from 'ngx-uploader';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { NgxUploaderModule } from 'ngx-uploader';
     FormSelectComponent,
     FormTextareaComponent,
     FormTextboxComponent,
+    FormTinymceComponent,
   ],
   imports: [
     CommonModule,
@@ -61,6 +64,7 @@ import { NgxUploaderModule } from 'ngx-uploader';
     NbRadioModule,
     NbSelectModule,
 
+    EditorModule,
     NgxMaskModule,
     NgxUploaderModule,
   ],
@@ -75,6 +79,7 @@ import { NgxUploaderModule } from 'ngx-uploader';
     FormSelectComponent,
     FormTextareaComponent,
     FormTextboxComponent,
+    FormTinymceComponent,
   ],
 })
 export class SandfoxNebuFormControlsModule {}

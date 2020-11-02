@@ -191,13 +191,16 @@
             "aot": true,
             "assets": [
               "projects/sandfox-nebu-showcase/src/favicon.ico",
-              "projects/sandfox-nebu-showcase/src/assets"
+              "projects/sandfox-nebu-showcase/src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ],
             "styles": [
               "projects/sandfox-nebu-showcase/src/styles.scss",
               "node_modules/@nebular/theme/styles/prebuilt/default.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js"
+            ]
           },
           "configurations": {
             "production": {
