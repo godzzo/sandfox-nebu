@@ -1,0 +1,20 @@
+<input
+  nbInput
+  #dateInput
+  class="datepicker-input"
+  autocomplete="off"
+  placeholder="{{ placeholder }}"
+  [nbDatepicker]="formpicker"
+  fullWidth
+  mask="0000-00-00"
+  id="datepickerInput{{ name }}"
+  (change)="onInputChanged($event)"
+  [status]="getStatus()"
+  [attr.disabled]="inputStatus === 'DISABLED' ? 'true' : null"
+/>
+
+<nb-datepicker
+  #formpicker
+  (dateChange)="onDateChange($event)"
+  format="yyyy-MM-dd"
+></nb-datepicker>

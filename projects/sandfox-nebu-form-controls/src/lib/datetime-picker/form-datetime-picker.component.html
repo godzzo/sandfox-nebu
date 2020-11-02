@@ -1,0 +1,24 @@
+<div class="form-group">
+  <label class="label">{{ caption }}</label>
+
+  <span class="datetime-container">
+    <sffc-core-datepicker
+      class="datetime-item"
+      [name]="name"
+      [caption]="caption"
+      [placeholder]="placeholder"
+      [formGroup]="formGroup"
+    ></sffc-core-datepicker>
+
+    <input
+      #timeInput
+      nbInput
+      (change)="onTimeInputChanged($event)"
+      class="datetime-item margint-left-05rem"
+      placeholder="óra:perc... (00:00)"
+      mask="00:00"
+      [status]="getStatus()"
+      [attr.disabled]="inputStatus === 'DISABLED' ? 'true' : null"
+    />
+  </span>
+</div>

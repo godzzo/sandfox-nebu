@@ -1,3 +1,6 @@
+import { FormDatetimePickerComponent } from './datetime-picker/form-datetime-picker.component';
+import { CoreDatepickerComponent } from './core-datepicker/core-datepicker.component';
+import { FormDatepickerComponent } from './datepicker/form-datepicker.component';
 import { FormAutocompleteComponent } from './autocomplete/form-autocomplete.component';
 import { FormCheckboxComponent } from './checkbox/form-checkbox.component';
 import { FormSelectComponent } from './select/form-select.component';
@@ -18,11 +21,17 @@ import {
 } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask';
+import { NbDateFnsDateModule } from '@nebular/date-fns';
 
 @NgModule({
   declarations: [
+    CoreDatepickerComponent,
+
     FormAutocompleteComponent,
     FormCheckboxComponent,
+    FormDatepickerComponent,
+    FormDatetimePickerComponent,
     FormSelectComponent,
     FormTextboxComponent,
   ],
@@ -37,16 +46,23 @@ import { CommonModule } from '@angular/common';
     NbButtonModule,
     NbCardModule,
     NbCheckboxModule,
+    NbDateFnsDateModule,
     NbDatepickerModule,
     NbIconModule,
     NbInputModule,
     NbListModule,
     NbRadioModule,
     NbSelectModule,
+
+    NgxMaskModule,
   ],
   exports: [
+    CoreDatepickerComponent,
+
     FormAutocompleteComponent,
     FormCheckboxComponent,
+    FormDatepickerComponent,
+    FormDatetimePickerComponent,
     FormSelectComponent,
     FormTextboxComponent,
   ],

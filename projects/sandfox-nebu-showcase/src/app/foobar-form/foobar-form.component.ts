@@ -42,6 +42,8 @@ export class FoobarFormComponent implements OnInit {
       type: null,
       isActive: true,
       userId: 79,
+      created: new Date(), // '2020-11-02'
+      planTime: new Date(),
     });
   }
 

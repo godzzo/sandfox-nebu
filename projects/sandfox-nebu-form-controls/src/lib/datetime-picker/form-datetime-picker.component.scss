@@ -1,0 +1,17 @@
+.datetime-container {
+  display: flex;
+}
+
+.datetime-item {
+  flex-grow: 1;
+  width: 5rem;
+}
+
+.margint-left-05rem {
+  margin-left: 0.5rem;
+}
+
+[nbInput].status-basic:disabled,
+[nbInput].status-danger:disabled {
+  color: rgba(103, 115, 139, 0.91);
+}
