@@ -1,0 +1,14 @@
+<div class="form-group" [formGroup]="formGroup">
+  <label for="textarea{{ name }}" class="label">{{ caption }}</label>
+
+  <textarea
+    nbInput
+    fullWidth
+    rows="3"
+    autocomplete="off"
+    id="textarea{{ name }}"
+    placeholder="{{ placeholder }}"
+    formControlName="{{ name }}"
+    [status]="getStatus()"
+  ></textarea>
+</div>

@@ -10,6 +10,7 @@ export * from './lib/core-datepicker/core-datepicker.component';
 export * from './lib/datepicker/form-datepicker.component';
 export * from './lib/datetime-picker/form-datetime-picker.component';
 export * from './lib/select/form-select.component';
+export * from './lib/textarea/form-textarea.component';
 export * from './lib/textbox/form-textbox.component';
 
 export * from './lib/sandfox-nebu-form-controls.module';

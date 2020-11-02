@@ -1,3 +1,4 @@
+import { FormTextareaComponent } from './textarea/form-textarea.component';
 import { FormDatetimePickerComponent } from './datetime-picker/form-datetime-picker.component';
 import { CoreDatepickerComponent } from './core-datepicker/core-datepicker.component';
 import { FormDatepickerComponent } from './datepicker/form-datepicker.component';
@@ -33,6 +34,7 @@ import { NbDateFnsDateModule } from '@nebular/date-fns';
     FormDatepickerComponent,
     FormDatetimePickerComponent,
     FormSelectComponent,
+    FormTextareaComponent,
     FormTextboxComponent,
   ],
   imports: [
@@ -64,6 +66,7 @@ import { NbDateFnsDateModule } from '@nebular/date-fns';
     FormDatepickerComponent,
     FormDatetimePickerComponent,
     FormSelectComponent,
+    FormTextareaComponent,
     FormTextboxComponent,
   ],
 })
