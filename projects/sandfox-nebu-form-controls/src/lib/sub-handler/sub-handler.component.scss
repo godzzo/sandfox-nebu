@@ -1,0 +1,17 @@
+.list-item {
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.input-text {
+  margin-right: 1rem;
+}
+
+.item_removed_1 {
+  display: none;
+}
+
+.full-width {
+  width: 100%;
+}

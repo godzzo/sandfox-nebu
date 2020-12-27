@@ -1,0 +1,66 @@
+<sffc-sub-handler
+  [caption]="caption"
+  [name]="name"
+  [childName]="childName"
+  [parentApi]="parentApi"
+  [parentFormGroup]="formGroup"
+  [readOnlyMode]="readOnlyMode"
+  [parentId]="parentId"
+  [itemTemplate]="tplUploadItem"
+  [newTemplate]="tplUploadNew"
+  [subHandler]="handler"
+  [hasNewButton]="false"
+></sffc-sub-handler>
+
+<ng-template #tplUploadNew let-handler="handler" let-formGroup="formGroup">
+  <ngx-core-uploader
+    (fileUploaded)="onFileUploaded($event)"
+  ></ngx-core-uploader>
+</ng-template>
+
+<ng-template
+  #tplUploadItem
+  let-handler="handler"
+  let-formGroup="formGroup"
+  let-index="index"
+>
+  <div class="image-container">
+    <span *ngIf="!isImage(formGroup.value.path)" class="extension">{{
+      getExtension(formGroup.value.path)
+    }}</span>
+    <img
+      *ngIf="isImage(formGroup.value.path)"
+      class="image-sample"
+      src="{{ getDownloadPath(formGroup.value) }}"
+    />
+  </div>
+
+  <nb-list>
+    <nb-list-item class="no-border">
+      <ng-container [formGroup]="formGroup">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          class="input-text margint-righ-1rem"
+          placeholder="Ne hagyja üresen"
+          formControlName="name"
+        />
+      </ng-container>
+    </nb-list-item>
+    <nb-list-item class="no-border">
+      <ng-container
+        [ngTemplateOutlet]="specItemTemplate"
+        [ngTemplateOutletContext]="{
+          handler: handler,
+          formGroup: formGroup,
+          index: index
+        }"
+      ></ng-container>
+    </nb-list-item>
+  </nb-list>
+
+  <a target="_blank" [href]="getDownloadPath(formGroup.value)">
+    <nb-icon icon="download-outline"></nb-icon>
+  </a>
+</ng-template>

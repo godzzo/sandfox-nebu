@@ -1,0 +1,52 @@
+<div class="form-group">
+  <label class="label">{{ caption }}</label>
+
+  <nb-list>
+    <nb-list-item *ngIf="!readOnlyMode" class="list-item">
+      <ng-container
+        [ngTemplateOutlet]="newTemplate"
+        [ngTemplateOutletContext]="{
+          handler: this,
+          formGroup: formGroupNewItem
+        }"
+      ></ng-container>
+
+      <button
+        *ngIf="hasNewButton"
+        class="control-button skip-forward-button"
+        nbButton
+        ghost
+        size="medium"
+        (click)="onAddNewItem()"
+      >
+        <nb-icon icon="plus-circle-outline" pack="eva"></nb-icon>
+      </button>
+    </nb-list-item>
+
+    <nb-list-item
+      class="list-item"
+      *ngFor="let rec of formArray['controls']; let index = index"
+      class="item_removed_{{ rec.value.logicRemove }}"
+    >
+      <ng-container
+        [ngTemplateOutlet]="itemTemplate"
+        [ngTemplateOutletContext]="{
+          handler: this,
+          formGroup: rec,
+          index: index
+        }"
+      ></ng-container>
+
+      <button
+        class="control-button skip-forward-button"
+        nbButton
+        ghost
+        size="medium"
+        *ngIf="!readOnlyMode"
+        (click)="onRemove($event, rec, index)"
+      >
+        <nb-icon icon="trash-2-outline" pack="eva"></nb-icon>
+      </button>
+    </nb-list-item>
+  </nb-list>
+</div>

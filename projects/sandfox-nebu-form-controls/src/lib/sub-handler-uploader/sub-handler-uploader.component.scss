@@ -1,0 +1,40 @@
+.image-sample {
+  /*
+  object-fit: none;
+  object-position: center;
+  */
+  width: 90%;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 5rem; */
+  width: 10rem;
+  margin-right: 1rem;
+  /*
+  border-radius: 70%;
+  border: 1px solid #edf1f7;
+  */
+}
+
+.extension {
+  text-transform: uppercase;
+}
+
+.margint-righ-1rem {
+  margin-right: 1rem;
+}
+
+.margint-left-1rem {
+  margin-left: 1rem;
+}
+
+nb-list-item.no-border, nb-list-item.no-border:first-child, nb-list-item.no-border:last-child {
+  border: 0px;
+}
+
+[nbInput].status-basic:disabled, [nbInput].status-danger:disabled {
+  color: rgba(103, 115, 139, 0.91);
+}

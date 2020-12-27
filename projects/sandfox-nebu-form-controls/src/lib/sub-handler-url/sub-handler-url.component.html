@@ -1,0 +1,56 @@
+<sffc-sub-handler
+  [caption]="caption"
+  [name]="name"
+  [childName]="childName"
+  [parentApi]="parentApi"
+  [parentFormGroup]="formGroup"
+  [readOnlyMode]="readOnlyMode"
+  [parentId]="parentId"
+
+  [itemTemplate]="tplUrlItem"
+  [newTemplate]="tplUrlNew"
+  [subHandler]="urlHandler"
+>
+</sffc-sub-handler>
+
+
+<ng-template #tplUrlNew
+  let-handler="handler"
+  let-formGroup="formGroup"
+>
+  <ng-container [formGroup]="formGroup">
+    <input [formControlName]="fieldName" [placeholder]="placeholder" type="text" nbInput fullWidth autocomplete="off">
+  </ng-container>
+</ng-template>
+
+<ng-template #tplUrlItem
+  let-item="item"
+  let-formGroup="formGroup"
+  let-index="index"
+>
+  <ng-container
+    *ngIf="specPosition === 'before'"
+    [ngTemplateOutlet]="specItemTemplate"
+    [ngTemplateOutletContext]="{formGroup: formGroup, index: index}"
+  ></ng-container>
+
+  <ng-container [formGroup]="formGroup">
+    <input [formControlName]="fieldName" [placeholder]="placeholder" type="text" nbInput fullWidth autocomplete="off" class="margint-righ-1rem">
+  </ng-container>
+
+  <ng-container
+    *ngIf="specPosition === 'middle'"
+    [ngTemplateOutlet]="specItemTemplate"
+    [ngTemplateOutletContext]="{formGroup: formGroup, index: index}"
+  ></ng-container>
+
+  <a target="_blank" [href]="formGroup.value.url">
+    <nb-icon icon="link-outline"></nb-icon>
+  </a>
+
+  <ng-container
+    *ngIf="specPosition === 'after'"
+    [ngTemplateOutlet]="specItemTemplate"
+    [ngTemplateOutletContext]="{formGroup: formGroup, index: index}"
+  ></ng-container>
+</ng-template>
